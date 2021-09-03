@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Router, Switch, Route, Link } from "react-router-dom";
+import { Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -74,13 +74,13 @@ const App = () => {
           ) : (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to={"/login"} className="nav-link">
+                <Link to={"/sign-in"} className="nav-link">
                   Login
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link to={"/register"} className="nav-link">
+                <Link to={"/sign-up"} className="nav-link">
                   Sign Up
                 </Link>
               </li>
@@ -90,8 +90,8 @@ const App = () => {
         <div className="container mt-3">
         <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
-            <Route exact path="/login" component={SignIn} />
-            <Route exact path="/register" component={SignUp} />
+            <Route exact path="/sign-in" component={SignIn} />
+            <Route exact path="/sign-up" component={SignUp} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/squad" component={Squad} />
           </Switch>
